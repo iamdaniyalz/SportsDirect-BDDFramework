@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SeleniumBDDFramework
 
 This is a BDD style Web Test automation framework.
@@ -16,3 +17,7 @@ Steps:
   
   > gradle build
   
+=======
+# SportsDirect-BDDFramework
+Automated product price verification using Cucumber - BDD Framework
+>>>>>>> b7d08dec9edecdbc2c71b4177d9fa6255aabd5fe
