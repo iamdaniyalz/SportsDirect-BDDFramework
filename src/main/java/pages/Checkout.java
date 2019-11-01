@@ -27,8 +27,8 @@ public class Checkout extends BaseWebPage{
     @FindBy(how = How.ID, using = "divBagTotalLink")
     private WebElement Checkout;
 
-    @FindBy(how = How.XPATH, using = "//td[@class='productdesc']//a[@href=\"/official-vintage-band-t-shirt-rolling-stones-600311#colcode=60031126\"]\n" +
-            "// /../../..//a[@class='BasketQuantBut s-basket-plus-button']")
+    @FindBy(how = How.XPATH, using = "//td[@class='productdesc']//a[@href=\"/official-vintage-band-t-shirt-rolling-stones-600311#colcode=60031126\"]" +
+            "/../../..//a[@class='BasketQuantBut s-basket-plus-button']")
     private WebElement IncreaseQuantity;
 
     @FindBy(how = How.XPATH, using = "//a[text()='Update bag']")

@@ -23,6 +23,10 @@ public class Setup {
     public Setup(WebDriver driver) {
         Setup.driver = driver;
     }
+
+    public Setup() {
+    }
+
     //Browser Initialization
     public static void initialization(String browser) throws IOException {
         System.out.println("Launching: " + browser);

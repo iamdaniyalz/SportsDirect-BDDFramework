@@ -21,13 +21,20 @@ public class HomePage extends BaseWebPage {
     @FindBy(how = How.ID, using = "txtSearch")
     private WebElement SearchBar;
 
+    @FindBy(how = How.XPATH, using = "//div[@class='modal-dialog advertPopup']//button[@class='close']")
+    private WebElement AdPopUp;
+
 
     public String WebsiteAccessibility() {
 
-        if(waitForElement(SearchBar)) {
+        if (AdPopUp.isDisplayed()){
+            AdPopUp.click();
             return "Website is Accessible";
         }
-
+        if (!AdPopUp.isDisplayed()) {
+            waitForElement(SearchBar);
+            return "Website is Accessible";
+        }
         else {
             System.out.println("Website not accessible");
         }

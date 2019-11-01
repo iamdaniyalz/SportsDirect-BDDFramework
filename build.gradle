@@ -54,7 +54,7 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/io.cucumber/cucumber-testng
 	compile group: 'io.cucumber', name: 'cucumber-testng', version: '4.7.2'
-	
+
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
 	compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.7.1'
     

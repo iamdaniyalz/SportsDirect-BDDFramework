@@ -1,7 +1,6 @@
 package step_definitions;
 
 import io.cucumber.java.en.And;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,8 +16,7 @@ import java.text.ParseException;
 
 public class PriceValidation extends Setup {
 
-    public PriceValidation(WebDriver driver) {
-        super(driver);
+    public PriceValidation() {
     }
 
     @Given("^I am on SportsDirect home page$")
