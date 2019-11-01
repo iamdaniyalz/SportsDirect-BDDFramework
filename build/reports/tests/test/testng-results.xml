@@ -2,19 +2,19 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-11-01T18:25:22 PKT" name="Gradle suite" finished-at="2019-11-01T18:26:09 PKT" duration-ms="47192">
+  <suite started-at="2019-11-01T19:24:21 PKT" name="Gradle suite" finished-at="2019-11-01T19:26:11 PKT" duration-ms="109485">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:test_runner.TestRunner@3fb7e0cd]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:test_runner.TestRunner@769eeb8e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2019-11-01T18:25:22 PKT" name="Gradle test" finished-at="2019-11-01T18:26:09 PKT" duration-ms="47192">
+    <test started-at="2019-11-01T19:24:21 PKT" name="Gradle test" finished-at="2019-11-01T19:26:11 PKT" duration-ms="109485">
       <class name="test_runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:test_runner.TestRunner@3fb7e0cd]" started-at="2019-11-01T18:25:22 PKT" name="setUpClass" finished-at="2019-11-01T18:25:22 PKT" duration-ms="101" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:test_runner.TestRunner@769eeb8e]" started-at="2019-11-01T19:24:21 PKT" name="setUpClass" finished-at="2019-11-01T19:24:21 PKT" duration-ms="106" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:test_runner.TestRunner@3fb7e0cd]" started-at="2019-11-01T18:25:22 PKT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-11-01T18:26:09 PKT" duration-ms="46894" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:test_runner.TestRunner@769eeb8e]" started-at="2019-11-01T19:24:21 PKT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-11-01T19:26:09 PKT" duration-ms="107914" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -27,46 +27,54 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Cannot locate an element using xpath=//img[@title='Karrimor - X Lite Run Headband Mens']
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[chrome not reachable
+  (Session info: chrome=77.0.3865.90)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PC123', ip: '192.168.101.94', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12.0.1'
-Driver info: driver.version: RemoteWebDriver]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\DANIYA~1.ZUL\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:59285}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 02e21765e7c342c4fd5db3b1da67aca0
+*** Element info: {Using=id, value=TotalValue}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//img[@title='Karrimor - X Lite Run Headband Mens']
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=77.0.3865.90)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'PC123', ip: '192.168.101.94', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12.0.1'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\DANIYA~1.ZUL\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:59285}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 02e21765e7c342c4fd5db3b1da67aca0
+*** Element info: {Using=id, value=TotalValue}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy23.getWrappedElement(Unknown Source)
-at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:50)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:484)
-at pages.Product.addProductTwoToBag(Product.java:61)
-at step_definitions.PriceValidation.i_add_second_product_in_the_bag(PriceValidation.java:37)
-at ✽.I add second product in the bag(file:src/test/resources/features/TotalPriceVerification.feature:9)
+at com.sun.proxy.$Proxy23.getText(Unknown Source)
+at pages.Checkout.getActualTotalPrice(Checkout.java:65)
+at step_definitions.PriceValidation.i_ensure_that_the_total_price_is_calculated_correctly(PriceValidation.java:64)
+at ✽.I ensure that the total price is calculated correctly(file:src/test/resources/features/TotalPriceVerification.feature:12)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test_runner.TestRunner@3fb7e0cd]" started-at="2019-11-01T18:26:09 PKT" name="tearDownClass" finished-at="2019-11-01T18:26:09 PKT" duration-ms="140" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test_runner.TestRunner@769eeb8e]" started-at="2019-11-01T19:26:09 PKT" name="tearDownClass" finished-at="2019-11-01T19:26:11 PKT" duration-ms="1404" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

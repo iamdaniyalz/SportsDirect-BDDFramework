@@ -28,7 +28,7 @@ public class HomePage extends BaseWebPage {
     public String WebsiteAccessibility() {
 
         if (AdPopUp.isDisplayed()){
-            AdPopUp.click();
+            Click(AdPopUp);
             return "Website is Accessible";
         }
         if (!AdPopUp.isDisplayed()) {

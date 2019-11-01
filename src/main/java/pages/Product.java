@@ -38,31 +38,31 @@ public class Product extends BaseWebPage {
     private WebElement AddToBag;
 
     public void searchProductOne() {
-        SearchBar.click();
+        Click(SearchBar);
         SearchBar.sendKeys("Band T Shirts");
         SearchBar.sendKeys(Keys.RETURN);
     }
 
     public void addProductOneToBag() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", ProductOne);
-        ProductOne.click();
+        scrollIntoView(ProductOne);
+        Click(ProductOne);
         waitForElement(SizeSmall);
-        SizeSmall.click();
-        AddToBag.click();
+        Click(SizeSmall);
+        Click(AddToBag);
     }
 
     public void searchProductTwo() {
-        SearchBar.click();
+        Click(SearchBar);
         SearchBar.sendKeys("Headband");
         SearchBar.sendKeys(Keys.RETURN);
     }
 
     public void addProductTwoToBag() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", ProductTwo);
-        ProductTwo.click();
+        scrollIntoView(ProductTwo);
+        Click(ProductTwo);
         waitForElement(OneSize);
-        OneSize.click();
-        AddToBag.click();
+        Click(OneSize);
+        Click(AddToBag);
     }
 
 }

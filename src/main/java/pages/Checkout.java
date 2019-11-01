@@ -53,8 +53,8 @@ public class Checkout extends BaseWebPage{
 
     public String increaseProductQuantity() throws InterruptedException {
         if(waitForElement(IncreaseQuantity)) {
-            IncreaseQuantity.click();
-            UpdateBag.click();
+            Click(IncreaseQuantity);
+            Click(UpdateBag);
             Thread.sleep(5000);
             return "Product quantity increased";
         }
