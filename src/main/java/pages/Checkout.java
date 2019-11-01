@@ -41,7 +41,7 @@ public class Checkout extends BaseWebPage{
             "//td[@class='itemtotalprice']//span[contains(text(),'£')]")
     private List<WebElement> ProductPrices;
 
-    public float actualTotalPrice = 0;
+    public float actualTotalPrice;
 
     public String goToCheckout(){
         Checkout.click();
@@ -61,10 +61,13 @@ public class Checkout extends BaseWebPage{
         return "Product quantity did not increase";
     }
 
-    public void getActualTotalPrice() throws InterruptedException {
+    public float getActualTotalPrice() throws InterruptedException {
         String totalPrice = ActualTotalValue.getText();
         String output = totalPrice.replace("£", "");
-        actualTotalPrice = Float.valueOf(output);
+
+        actualTotalPrice = Float.parseFloat(output);
+        System.out.println(actualTotalPrice);
+        return output;
     }
 
     public int getProductPrice() throws ParseException {

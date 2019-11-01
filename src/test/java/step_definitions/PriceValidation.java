@@ -63,5 +63,6 @@ public class PriceValidation extends Setup {
     public void i_ensure_that_the_total_price_is_calculated_correctly() throws InterruptedException, ParseException {
         Checkout.getActualTotalPrice();
         Checkout.getProductPrice();
+        driver.quit();
     }
 }
