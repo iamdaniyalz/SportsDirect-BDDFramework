@@ -9,6 +9,15 @@ Automated products price verification using Cucumber - BDD Framework
   - TestNG
   - Gradle
   
+# Steps to perform in order to build and execute the script.
+Prerequisites
+  > JAVA
+  
+1. Clone the repo to your computer.
+2. Double click on OneClickExecute.bat file which you will find in the root directory.
+3. A command prompt will launch downloading Gradle in your system (if not already installed) and then start the execution automatically.
+4. To view HTML Report after execution, navigate to: SportsDirect-BDDFramework\Reports\cucumber-reports
+
 Steps:
   > gradle clean
   
@@ -16,12 +25,3 @@ Steps:
   
   > gradle build
   
-Prerequisites
-  > JAVA
-  
-# Steps to perform in order to build and execute the script.
-
-1. Clone the repo to your computer.
-2. I have made a OneClickExecute.bat file which you will find in the root directory.
-3. Double clicking it will launch a command prompt which will download Gradle in your system (if not already installed) and then start the execution automatically.
-4. To view HTML Report after execution, navigate to: SportsDirect-BDDFramework\Reports\cucumber-reports
