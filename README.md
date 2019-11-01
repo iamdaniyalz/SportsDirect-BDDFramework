@@ -15,3 +15,6 @@ Steps:
   > gradle assemble
   
   > gradle build
+  
+To view HTML Report after execution, go to:
+SportsDirect-BDDFramework\Reports\cucumber-reports
