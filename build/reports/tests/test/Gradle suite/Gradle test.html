@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Gradle test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Oct 31 19:51:56 PKT 2019</td>
+<td>Started on:</td><td>Fri Nov 01 16:51:53 PKT 2019</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (367 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (429 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,19 +76,40 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='test_runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the total price of products added in the bag", "SportsDirect - Verify Total Price"</td>
-<td><div><pre>org.testng.SkipException: This scenario is skipped
-	at io.cucumber.testng.TestCaseResultListener.getError(TestCaseResultListener.java:71)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:83)
+<td><div><pre>cucumber.runtime.CucumberException: class step_definitions.PriceValidation doesn&apos;t have an empty constructor. If you need DI, put cucumber-picocontainer on the classpath
+	at cucumber.runtime.java.DefaultJavaObjectFactory.cacheNewInstance(DefaultJavaObjectFactory.java:44)
+	at cucumber.runtime.java.DefaultJavaObjectFactory.getInstance(DefaultJavaObjectFactory.java:32)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
+	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
+	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+	at cucumber.runner.TestCase.run(TestCase.java:46)
+	at cucumber.runner.Runner.runPickle(Runner.java:50)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
 	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:24)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
 	at com.sun.proxy.$Proxy2.stop(Unknown Source)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.lang.NoSuchMethodException: step_definitions.PriceValidation.&lt;init&gt;()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3355)
+	at java.base/java.lang.Class.getConstructor(Class.java:2157)
+	at cucumber.runtime.java.DefaultJavaObjectFactory.cacheNewInstance(DefaultJavaObjectFactory.java:39)
+	... 63 more
 ... Removed 48 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace13625422", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace13625422'><pre>org.testng.SkipException: This scenario is skipped
-	at io.cucumber.testng.TestCaseResultListener.getError(TestCaseResultListener.java:71)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:83)
+<div class='stack-trace' id='stack-trace13625422'><pre>cucumber.runtime.CucumberException: class step_definitions.PriceValidation doesn&apos;t have an empty constructor. If you need DI, put cucumber-picocontainer on the classpath
+	at cucumber.runtime.java.DefaultJavaObjectFactory.cacheNewInstance(DefaultJavaObjectFactory.java:44)
+	at cucumber.runtime.java.DefaultJavaObjectFactory.getInstance(DefaultJavaObjectFactory.java:32)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
+	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
+	at cucumber.runner.TestStep.run(TestStep.java:50)
+	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+	at cucumber.runner.TestCase.run(TestCase.java:46)
+	at cucumber.runner.Runner.runPickle(Runner.java:50)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:79)
 	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:24)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -143,6 +164,11 @@ function toggleAllBoxes() {
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
 	at java.base/java.lang.Thread.run(Thread.java:835)
+Caused by: java.lang.NoSuchMethodException: step_definitions.PriceValidation.&lt;init&gt;()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3355)
+	at java.base/java.lang.Class.getConstructor(Class.java:2157)
+	at cucumber.runtime.java.DefaultJavaObjectFactory.cacheNewInstance(DefaultJavaObjectFactory.java:39)
+	... 63 more
 </pre></div></td>
 <td>0</td>
 <td>test_runner.TestRunner@59a4fcdb</td></tr>

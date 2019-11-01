@@ -3,32 +3,35 @@
  */
 package pages;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
+
 /**
- *
  * @author Daniyal (iamdaniyalz.pro@gmail.com)
- *
  */
-public class HomePage {
-	public HomePage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
-		}
-	
-	@FindBy(how = How.NAME, using = "q") private WebElement searchField;
-	@FindBy(how = How.XPATH, using = ".//h3[1]") private WebElement topResult;
-	
-	public void enterSearch(String string) {
-		searchField.sendKeys(string);
-	    searchField.sendKeys(Keys.ENTER);
-	}
-	
-	public String getTitleText() {
-		return topResult.getAttribute("innerText");
-	}
-	 
+
+public class HomePage extends BaseWebPage {
+
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
+
+    @FindBy(how = How.ID, using = "txtSearch")
+    private WebElement SearchBar;
+
+
+    public String WebsiteAccessibility() {
+
+        if(waitForElement(SearchBar)) {
+            return "Website is Accessible";
+        }
+
+        else {
+            System.out.println("Website not accessible");
+        }
+        return "Website not Accessible";
+    }
+
 }
