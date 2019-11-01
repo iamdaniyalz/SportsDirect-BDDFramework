@@ -12,6 +12,7 @@ public class BaseWebPage {
 
     public BaseWebPage(WebDriver driver) {
         BaseWebPage.driver = driver;
+
     }
 
     public boolean Click(WebElement element){

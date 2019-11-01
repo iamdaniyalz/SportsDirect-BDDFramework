@@ -48,11 +48,14 @@ dependencies {
     
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
-    
+
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
-	compile group: 'io.cucumber', name: 'cucumber-java', version: '4.7.2'
-	
-	// https://mvnrepository.com/artifact/io.cucumber/cucumber-testng
+	compile group: 'io.cucumber', name: 'cucumber-java', version: '4.8.0'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
+    compile group: 'io.cucumber', name: 'cucumber-core', version: '4.8.0'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-testng
 	compile group: 'io.cucumber', name: 'cucumber-testng', version: '4.7.2'
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager

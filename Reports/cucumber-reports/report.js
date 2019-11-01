@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/TotalPriceVerification.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/TotalPriceValidation.feature");
 formatter.feature({
   "name": "SportsDirect - validate Total Price",
   "description": "  I want to validate the total price of the products added in the bag",
@@ -67,7 +67,6 @@ formatter.match({
   "location": "PriceValidation.i_ensure_that_the_total_price_is_calculated_correctly()"
 });
 formatter.result({
-  "error_message": "java.lang.NumberFormatException: For input string: \"£43.48\"\r\n\tat java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)\r\n\tat java.base/jdk.internal.math.FloatingDecimal.parseFloat(FloatingDecimal.java:122)\r\n\tat java.base/java.lang.Float.parseFloat(Float.java:461)\r\n\tat pages.Checkout.getActualTotalPrice(Checkout.java:67)\r\n\tat step_definitions.PriceValidation.i_ensure_that_the_total_price_is_calculated_correctly(PriceValidation.java:64)\r\n\tat ✽.I ensure that the total price is calculated correctly(file:src/test/resources/features/TotalPriceVerification.feature:12)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 });

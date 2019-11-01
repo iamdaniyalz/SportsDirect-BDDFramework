@@ -1,7 +1,8 @@
 package util;
 
+
+import io.cucumber.core.api.Scenario;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -21,16 +22,14 @@ public class Setup {
     protected static Checkout Checkout;
 
     public Setup(WebDriver driver) {
-        Setup.driver = driver;
+        this.driver = driver;
     }
-
     public Setup() {
     }
 
     //Browser Initialization
     public static void initialization(String browser) throws IOException {
         System.out.println("Launching: " + browser);
-
         if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             System.setProperty("webdriver.chrome.logfile", "NUL");

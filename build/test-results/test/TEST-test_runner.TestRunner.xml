@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test_runner.TestRunner" tests="1" skipped="0" failures="1" errors="0" timestamp="2019-11-01T15:12:28" hostname="PC123" time="46.647">
+<testsuite name="test_runner.TestRunner" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-01T22:37:16" hostname="ENVY-15" time="38.768">
   <properties/>
-  <testcase name="runScenario[0](&quot;validate the total price of products added in the bag&quot;, &quot;SportsDirect - validate Total Price&quot;)" classname="test_runner.TestRunner" time="46.647">
-    <failure message="java.lang.NumberFormatException: For input string: &quot;£43.48&quot;" type="java.lang.NumberFormatException">java.lang.NumberFormatException: For input string: &quot;£43.48&quot;
-	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
-	at java.base/jdk.internal.math.FloatingDecimal.parseFloat(FloatingDecimal.java:122)
-	at java.base/java.lang.Float.parseFloat(Float.java:461)
-	at pages.Checkout.getActualTotalPrice(Checkout.java:67)
-	at step_definitions.PriceValidation.i_ensure_that_the_total_price_is_calculated_correctly(PriceValidation.java:64)
-	at ✽.I ensure that the total price is calculated correctly(file:src/test/resources/features/TotalPriceVerification.feature:12)
-</failure>
-  </testcase>
+  <testcase name="runScenario[0](&quot;validate the total price of products added in the bag&quot;, &quot;SportsDirect - validate Total Price&quot;)" classname="test_runner.TestRunner" time="38.768"/>
   <system-out><![CDATA[Launching: chrome
+Actual Total price is Â£43.48
+Individual Product prices[£39.98, £3.50]
+Sum of products price is 43.48
+Total Sum of Products Prices is EQUAL to the Actual Total Price Calculated
 ]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 22758
+Starting ChromeDriver 77.0.3865.40 (f484704e052e0b556f8030b65b953dce96503217-refs/branch-heads/3865@{#442}) on port 34646
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-Nov 01, 2019 8:12:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Nov 02, 2019 3:37:22 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>

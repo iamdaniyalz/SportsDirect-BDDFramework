@@ -8,10 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 /**
  *
@@ -38,10 +37,11 @@ public class Checkout extends BaseWebPage{
     private WebElement ActualTotalValue;
 
     @FindBy(how = How.XPATH, using = "//div[@id='dnn_ctr1628848_ViewBasket_BasketDetails_gvBasketDetails']" +
-            "//td[@class='itemtotalprice']//span[contains(text(),'£')]")
+            "//td[@class='itemtotalprice']//span[@class='money']")
     private List<WebElement> ProductPrices;
 
-    public float actualTotalPrice;
+    float ActualProductPrice = 0;
+    float SumProductPrice = 0;
 
     public String goToCheckout(){
         Checkout.click();
@@ -63,39 +63,35 @@ public class Checkout extends BaseWebPage{
 
     public float getActualTotalPrice() throws InterruptedException {
         String totalPrice = ActualTotalValue.getText();
-        String output = totalPrice.replace("£", "");
-        float f = Float.parseFloat(output);
-        System.out.println("Actual price is "+f);
-        return f;
+        totalPrice = totalPrice.substring(1);
+        ActualProductPrice = Float.parseFloat(totalPrice);
+        System.out.println("Actual Total price is £"+ActualProductPrice);
+        return ActualProductPrice;
     }
 
-    public int getProductPrice() throws ParseException {
-
-        for (WebElement element : ProductPrices) {
-            String x = element.getText();
-            NumberFormat format = NumberFormat.getCurrencyInstance();
-            Number number = format.parse(x);
-            System.out.println(number.toString());
-            return Integer.parseInt(number.toString());
+    public float getProductPrice() throws ParseException {
+        List<String> ProductPriceList = new ArrayList<String>();
+        for (WebElement ProductsPrice : ProductPrices) {
+            ProductPriceList.add(ProductsPrice.getText());
         }
-        return Integer.parseInt(null);
+        System.out.println("Individual Product prices" + ProductPriceList);
+        for (int i = 0; i < ProductPriceList.size(); i++) {
+            String prodPrice= ProductPriceList.get(i).substring(1);
+            float TempProductPrice = Float.parseFloat(prodPrice);
+            SumProductPrice = SumProductPrice + TempProductPrice;
+        }
+        System.out.println("Sum of products price is "+SumProductPrice);
+        return SumProductPrice;
     }
 
-    public int addProductPrice() throws ParseException {
-        int[] a = {getProductPrice()};
-        int sum = IntStream.of(a).sum();
-        System.out.println("The total price of products is " + sum);
-        return sum;
+    public String compareTotalPrice() {
+        if(Float.compare(ActualProductPrice, SumProductPrice) == 0){
+            System.out.println("Total Sum of Products Prices is EQUAL to the Actual Total Price Calculated");
+            return "Price validated";
+        }
+        else {
+            System.out.println("Total Sum of Products Prices is NOT EQUAL to the Actual Total Price Calculated");
+        }
+        return "Price not validated";
     }
-
-/*    public void validateTotalPrice() throws ParseException {
-        addProductPrice();
-        int number2;
-        int number1;
-
-        if (addProductPrice() == number2 )
-            System.out.printf( "%d == %d\n", number1, number2 );
-        if ( number1 != number2 )
-            System.out.printf( "%d != %d\n", number1, number2 );
-    }*/
 }

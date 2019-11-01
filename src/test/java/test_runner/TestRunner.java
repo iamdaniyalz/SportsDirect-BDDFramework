@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"step_definitions"},
         plugin = {"pretty", "html:Reports/cucumber-reports"},
         dryRun = false,
-        strict = false,
+        strict = true,
         monochrome = true)
 
 public class TestRunner extends AbstractTestNGCucumberTests {

@@ -1,6 +1,7 @@
 package step_definitions;
 
 import io.cucumber.java.en.And;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,7 +28,8 @@ public class PriceValidation extends Setup {
 
     @When("^I add first product in the bag$")
 	public void i_add_first_product_in_the_bag() {
-		Product.searchProductOne();
+
+        Product.searchProductOne();
 		Product.addProductOneToBag();
     }
 
@@ -50,19 +52,20 @@ public class PriceValidation extends Setup {
 
     @And("I add one more instance of first product")
     public void i_add_one_more_instance_of_first_product() throws InterruptedException {
-        try {
-            Assert.assertEquals(Checkout.increaseProductQuantity(), "Product quantity increased");
-        }
-        catch (AssertionError e) {
-            e.setStackTrace(new StackTraceElement[0]);
-            throw e;
-        }
+        Checkout.increaseProductQuantity();
     }
 
     @Then("I ensure that the total price is calculated correctly")
     public void i_ensure_that_the_total_price_is_calculated_correctly() throws InterruptedException, ParseException {
         Checkout.getActualTotalPrice();
         Checkout.getProductPrice();
+        try {
+            Assert.assertEquals(Checkout.compareTotalPrice(), "Price validated");
+        }
+        catch (AssertionError e) {
+            e.setStackTrace(new StackTraceElement[0]);
+            throw e;
+        }
         driver.quit();
     }
 }
