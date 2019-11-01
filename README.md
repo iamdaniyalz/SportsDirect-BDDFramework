@@ -11,7 +11,7 @@ Automated products price verification using Cucumber - BDD Framework
   
 # Steps to perform in order to build and execute the script.
 Prerequisites
-  > JAVA
+  > Ensure current JDK is installed (nothing else is required -- other dependencies will automatically download)
   
 1. Clone the repo to your computer.
 2. Double click on OneClickExecute.bat file which you will find in the root directory.
