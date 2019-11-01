@@ -15,8 +15,9 @@ Prerequisites
   
 1. Clone the repo to your computer.
 2. Double click on OneClickExecute.bat file which you will find in the root directory.
-3. A command prompt will launch downloading Gradle in your system (if not already installed) and then start the execution automatically.
-4. To view HTML Report after execution, navigate to: SportsDirect-BDDFramework\Reports\cucumber-reports
+3. A command prompt will launch downloading Gradle in your system (if not already installed).
+4. The script execution will start automatically in the browser
+5. To view HTML Report after execution, navigate to: SportsDirect-BDDFramework\Reports\cucumber-reports
 
 Steps:
   > gradle clean
