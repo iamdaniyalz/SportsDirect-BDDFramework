@@ -64,10 +64,9 @@ public class Checkout extends BaseWebPage{
     public float getActualTotalPrice() throws InterruptedException {
         String totalPrice = ActualTotalValue.getText();
         String output = totalPrice.replace("£", "");
-
-        actualTotalPrice = Float.parseFloat(output);
-        System.out.println(actualTotalPrice);
-        return output;
+        float f = Float.parseFloat(output);
+        System.out.println("Actual price is "+f);
+        return f;
     }
 
     public int getProductPrice() throws ParseException {
