@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.core.api.Scenario;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseWebPage {
 
     public static WebDriver driver;
+    public static Scenario scenario;
 
-    public BaseWebPage(WebDriver driver) {
+    public BaseWebPage(WebDriver driver, Scenario scenario) {
         BaseWebPage.driver = driver;
-
+        BaseWebPage.scenario = scenario;
     }
 
     public boolean Click(WebElement element){

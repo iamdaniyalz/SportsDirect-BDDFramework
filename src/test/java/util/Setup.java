@@ -16,13 +16,16 @@ import java.util.concurrent.TimeUnit;
 public class Setup {
 
     public static WebDriver driver;
+    public static Scenario scenario;
     public static String BaseURL = "https://www.sportsdirect.com/";
+    protected static BaseWebPage BaseWebPage;
     protected static HomePage HomePage;
     protected static Product Product;
     protected static Checkout Checkout;
 
-    public Setup(WebDriver driver) {
+    public Setup(WebDriver driver, Scenario scenario) {
         this.driver = driver;
+        this.scenario = scenario;
     }
     public Setup() {
     }
@@ -44,7 +47,7 @@ public class Setup {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
         }
-
+        BaseWebPage = new BaseWebPage(driver,scenario);
         HomePage = PageFactory.initElements(driver, HomePage.class);
         Product = PageFactory.initElements(driver, Product.class);
         Checkout = PageFactory.initElements(driver, Checkout.class);

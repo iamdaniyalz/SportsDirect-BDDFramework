@@ -18,14 +18,4 @@ Prerequisites
 3. A command prompt will launch downloading Gradle in your system (if not already installed).
 4. The script execution will start automatically in the browser
 5. To view HTML Report after execution, navigate to: SportsDirect-BDDFramework\Reports\cucumber-reports
-
-Note: 
-  > In order to view Console logs regarding product price comparison, import the project as Gradle project in Eclipse or IntelliJ IDEA. Run the TestRunner.class to execute the script.
-
-Steps:
-  > gradle clean
-  
-  > gradle assemble
-  
-  > gradle build
   

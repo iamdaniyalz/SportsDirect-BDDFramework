@@ -9,6 +9,9 @@ formatter.scenario({
   "description": "",
   "keyword": "Scenario"
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I am on SportsDirect home page",
   "keyword": "Given "
@@ -66,7 +69,13 @@ formatter.step({
 formatter.match({
   "location": "PriceValidation.i_ensure_that_the_total_price_is_calculated_correctly()"
 });
+formatter.write("Actual Total price is 43.48");
+formatter.write("Sum of products price is 43.48");
+formatter.write("Total Sum of Products Prices is EQUAL to the Actual Total Price Calculated");
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 });

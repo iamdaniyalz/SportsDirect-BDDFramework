@@ -1,7 +1,9 @@
 package step_definitions;
 
+import io.cucumber.core.api.Scenario;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +20,11 @@ import java.text.ParseException;
 public class PriceValidation extends Setup {
 
     public PriceValidation() {
+    }
+
+    @Before
+    public void before(Scenario scenario) {
+        this.scenario = scenario;
     }
 
     @Given("^I am on SportsDirect home page$")
@@ -57,15 +64,18 @@ public class PriceValidation extends Setup {
 
     @Then("I ensure that the total price is calculated correctly")
     public void i_ensure_that_the_total_price_is_calculated_correctly() throws InterruptedException, ParseException {
-        Checkout.getActualTotalPrice();
-        Checkout.getProductPrice();
+        Checkout.getActualTotalPrice(scenario);
+        Checkout.getProductPrice(scenario);
         try {
-            Assert.assertEquals(Checkout.compareTotalPrice(), "Price validated");
+            Assert.assertEquals(Checkout.compareTotalPrice(scenario), "Price validated");
         }
         catch (AssertionError e) {
             e.setStackTrace(new StackTraceElement[0]);
             throw e;
         }
+    }
+    @After
+    public void after() {
         driver.quit();
     }
 }

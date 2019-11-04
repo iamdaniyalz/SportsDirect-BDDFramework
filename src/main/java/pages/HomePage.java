@@ -3,6 +3,7 @@
  */
 package pages;
 
+import io.cucumber.core.api.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,8 +15,8 @@ import org.openqa.selenium.support.How;
 
 public class HomePage extends BaseWebPage {
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage (WebDriver driver) {
+        super(driver, scenario);
     }
 
     @FindBy(how = How.ID, using = "txtSearch")

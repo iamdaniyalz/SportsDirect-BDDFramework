@@ -3,6 +3,7 @@
  */
 package pages;
 
+import io.cucumber.core.api.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,7 +21,7 @@ import java.util.List;
 public class Checkout extends BaseWebPage{
 
     public Checkout(WebDriver driver) {
-        super(driver);
+        super(driver, scenario);
     }
 
     @FindBy(how = How.ID, using = "divBagTotalLink")
@@ -61,15 +62,16 @@ public class Checkout extends BaseWebPage{
         return "Product quantity did not increase";
     }
 
-    public float getActualTotalPrice() throws InterruptedException {
+    public float getActualTotalPrice(Scenario scenario) throws InterruptedException {
         String totalPrice = ActualTotalValue.getText();
         totalPrice = totalPrice.substring(1);
         ActualProductPrice = Float.parseFloat(totalPrice);
-        System.out.println("Actual Total price is £"+ActualProductPrice);
+        System.out.println("Actual Total price is "+ActualProductPrice);
+        scenario.write("Actual Total price is "+ActualProductPrice);
         return ActualProductPrice;
     }
 
-    public float getProductPrice() throws ParseException {
+    public float getProductPrice(Scenario scenario) throws ParseException {
         List<String> ProductPriceList = new ArrayList<String>();
         for (WebElement ProductsPrice : ProductPrices) {
             ProductPriceList.add(ProductsPrice.getText());
@@ -81,16 +83,19 @@ public class Checkout extends BaseWebPage{
             SumProductPrice = SumProductPrice + TempProductPrice;
         }
         System.out.println("Sum of products price is "+SumProductPrice);
+        scenario.write("Sum of products price is "+SumProductPrice);
         return SumProductPrice;
     }
 
-    public String compareTotalPrice() {
+    public String compareTotalPrice(Scenario scenario) {
         if(Float.compare(ActualProductPrice, SumProductPrice) == 0){
             System.out.println("Total Sum of Products Prices is EQUAL to the Actual Total Price Calculated");
+            scenario.write("Total Sum of Products Prices is EQUAL to the Actual Total Price Calculated");
             return "Price validated";
         }
         else {
             System.out.println("Total Sum of Products Prices is NOT EQUAL to the Actual Total Price Calculated");
+            scenario.write("Total Sum of Products Prices is NOT EQUAL to the Actual Total Price Calculated");
         }
         return "Price not validated";
     }
