@@ -53,6 +53,7 @@ public class Product extends BaseWebPage {
 
     public void searchProductTwo() {
         Click(SearchBar);
+        SearchBar.clear();
         SearchBar.sendKeys("Headband");
         SearchBar.sendKeys(Keys.RETURN);
     }
